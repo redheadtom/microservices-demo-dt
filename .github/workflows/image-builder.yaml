@@ -131,8 +131,8 @@ jobs:
           push: True
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
-          context: src/cartservice
-          file: src/cartservice/Dockerfile
+          context: src/cartservice/src
+          file: src/cartservice/src/Dockerfile
           cache-from: type=registry,ref=ghcr.io/mreider/cartservice:latest
           cache-to: type=inline
       - uses: docker/build-push-action@v2
