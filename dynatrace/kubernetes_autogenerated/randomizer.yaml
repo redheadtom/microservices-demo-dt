@@ -29,14 +29,14 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: v1
-kind: Pod
+kind: Deployment
 metadata:
   name: randomizer
 spec:
   serviceAccountName: randomizer
   containers:
     - name: randomizer
-      image: ghcr.io/mreider/randomizer:104
+      image: ghcr.io/mreider/randomizer:105
       command:
             - node
             - "randomizer.js"
