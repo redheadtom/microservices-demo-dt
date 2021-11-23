@@ -1,4 +1,4 @@
-ROM node:16-bullseye
+FROM node:16-bullseye
 RUN apt update && \
       apt install -y curl && \
       curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && \
