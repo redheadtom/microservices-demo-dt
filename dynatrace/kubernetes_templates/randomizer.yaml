@@ -28,8 +28,14 @@ roleRef:
   name: modify-pods
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
+metadata:
+  name: randomizer
+spec:
+  selector:
+    matchLabels:
+      app: randomizer
 metadata:
   name: randomizer
 spec:
