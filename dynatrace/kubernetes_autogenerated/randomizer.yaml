@@ -42,7 +42,7 @@ spec:
             - "randomizer.js"
       resources:
         requests:
-          cpu: 10m
+          cpu: 32m
           memory: 16Mi
         limits:
           memory: 64Mi
