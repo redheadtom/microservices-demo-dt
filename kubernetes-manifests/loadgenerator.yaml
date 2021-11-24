@@ -49,6 +49,9 @@ spec:
       containers:
       - name: main
         image: loadgenerator
+        command: ["/bin/sh", "-c"]
+        args:
+          - 'locust --host="http://${FRONTEND_ADDR}" --headless -u "${USERS}" 2>&1"]'
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
