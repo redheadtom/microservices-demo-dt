@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: recommendationservice
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: recommendationservice
@@ -29,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/recommendationservice:154
+        image: ghcr.io/mreider/recommendationservice:155
         ports:
         - containerPort: 8080
         env:

@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: randomizer
-            image: ghcr.io/mreider/loadgenerator:154
+            image: ghcr.io/mreider/loadgenerator:155
             command:
             - /bin/sh
             - -c
@@ -18,7 +18,7 @@ spec:
             - cron.sh
             env:
             - name: FRONTEND_ADDR
-              value: "frontend:80"
+              value: "34.132.236.107:80"
             - name: USERS
               value: "10000"
           restartPolicy: OnFailure

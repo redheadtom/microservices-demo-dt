@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: shippingservice
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: shippingservice
@@ -28,7 +29,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: ghcr.io/mreider/shippingservice:154
+        image: ghcr.io/mreider/shippingservice:155
         ports:
         - containerPort: 50051
         env:

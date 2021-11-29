@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: productcatalogservice
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: productcatalogservice
@@ -29,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/productcatalogservice:154
+        image: ghcr.io/mreider/productcatalogservice:155
         ports:
         - containerPort: 3550
         env:

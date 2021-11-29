@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: emailservice
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: emailservice
@@ -29,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/emailservice:154
+        image: ghcr.io/mreider/emailservice:155
         ports:
         - containerPort: 8080
         env:

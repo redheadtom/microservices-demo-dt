@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: cartservice
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: cartservice
@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/cartservice:154
+        image: ghcr.io/mreider/cartservice:155
         ports:
         - containerPort: 7070
         env:
