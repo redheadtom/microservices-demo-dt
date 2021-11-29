@@ -1,0 +1,36 @@
+name: delete stuff
+on:
+  workflow_dispatch:
+jobs:
+  delete_stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get gpr package version id from first 10 packages
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: True
+        run: |
+          echo "::set-env name=VERSION_ID::$(curl -X POST \
+          -H "Accept: application/vnd.github.package-deletes-preview+json" \
+          -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
+          -d "{\"query\":\"query {repository(owner:\\\""$YOUR_ORG_NAME"\\\", name:\\\""$REPOSITORY_NAME"\\\") {registryPackages(first:40) {edges{node{id, name, versions(first:10){edges {node {id, version}}}}}}}}\"}" \
+          https://api.github.com/graphql | jq '.data.repository.registryPackages.edges[].node.versions.edges[].node' | jq -s '.' | jq --arg GITHUB_SHA $GITHUB_SHA '.[] | select(.version==$GITHUB_SHA) | .id')"
+      - name: delete gpr package version
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: True
+        id: attempt_delete
+        run: |
+          echo "::set-output name=delete::$(curl -X POST \
+          -H "Accept: application/vnd.github.package-deletes-preview+json" \
+          -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
+          -d "{\"query\":\"mutation { deletePackageVersion(input:{packageVersionId:\\\"${{ env.VERSION_ID }}\\\"}) { success }}\"}" \
+          https://api.github.com/graphql)"
+      - name: check if delete was successful
+        run: |
+          if [-n $(echo "$DELETE_RESULT" | jq '.data.deletePackageVersion')]
+            then
+            echo "$DELETE_RESULT" | jq '.errors' | jq '.[].message'
+            exit 1
+          fi
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: True
+          DELETE_RESULT: ${{ steps.attempt_delete.outputs.delete }}

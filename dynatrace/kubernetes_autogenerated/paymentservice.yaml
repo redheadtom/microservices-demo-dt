@@ -30,18 +30,12 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/paymentservice:108
+        image: ghcr.io/mreider/paymentservice:148
         ports:
         - containerPort: 50051
         env:
         - name: PORT
           value: "50051"
-        readinessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:50051"]
-        livenessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:50051"]
         resources:
           requests:
             cpu: 30m

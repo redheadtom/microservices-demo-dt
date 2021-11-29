@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/currencyservice:108
+        image: ghcr.io/mreider/currencyservice:148
         ports:
         - name: grpc
           containerPort: 7000
@@ -43,12 +43,6 @@ spec:
         #   value: "1"
         # - name: DISABLE_DEBUGGER
         #   value: "1"
-        readinessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:7000"]
-        livenessProbe:
-          exec:
-            command: ["/bin/grpc_health_probe", "-addr=:7000"]
         resources:
           requests:
             cpu: 30m

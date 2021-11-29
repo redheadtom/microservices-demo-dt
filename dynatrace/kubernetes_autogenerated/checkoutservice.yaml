@@ -31,15 +31,9 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: ghcr.io/mreider/checkoutservice:108
+          image: ghcr.io/mreider/checkoutservice:148
           ports:
           - containerPort: 5050
-          readinessProbe:
-            exec:
-              command: ["/bin/grpc_health_probe", "-addr=:5050"]
-          livenessProbe:
-            exec:
-              command: ["/bin/grpc_health_probe", "-addr=:5050"]
           env:
           - name: LEAK_MAX
             value: "10000"
