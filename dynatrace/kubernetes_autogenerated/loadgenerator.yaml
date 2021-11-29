@@ -35,7 +35,7 @@ spec:
         image: ghcr.io/mreider/loadgenerator:150
         env:
         - name: FRONTEND_ADDR
-          value: "frontend:80"
+          value: "http://34.132.236.107:80"
         - name: USERS
           value: "100"
         resources:
