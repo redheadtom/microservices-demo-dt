@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: randomizer
-            image: ghcr.io/mreider/loadgenerator:152
+            image: ghcr.io/mreider/loadgenerator:153
             command:
             - /bin/sh
             - -c
