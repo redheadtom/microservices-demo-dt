@@ -18,7 +18,7 @@ spec:
             - cron.sh
             env:
             - name: FRONTEND_ADDR
-              value: "frontend:80"
+              value: "34.132.236.107:80"
             - name: USERS
               value: "10000"
           restartPolicy: OnFailure
