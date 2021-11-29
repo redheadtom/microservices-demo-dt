@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: randomizer
-            image: ghcr.io/mreider/loadgenerator:155
+            image: ghcr.io/mreider/loadgenerator:158
             command:
             - /bin/sh
             - -c
@@ -20,5 +20,5 @@ spec:
             - name: FRONTEND_ADDR
               value: "34.132.236.107:80"
             - name: USERS
-              value: "10000"
+              value: "1000"
           restartPolicy: OnFailure

@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: loadgenerator
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: loadgenerator
@@ -38,10 +38,10 @@ spec:
         - name: FRONTEND_ADDR
           value: "34.132.236.107:80"
         - name: USERS
-          value: "1000"
+          value: "80"
         resources:
           requests:
-            cpu: 300m
+            cpu: 100m
             memory: 256Mi
           limits:
             cpu: 500m

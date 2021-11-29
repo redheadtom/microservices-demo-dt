@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: currencyservice
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: currencyservice
@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/currencyservice:155
+        image: ghcr.io/mreider/currencyservice:158
         ports:
         - name: grpc
           containerPort: 7000
