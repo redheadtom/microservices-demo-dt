@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/paymentservice:151
+        image: ghcr.io/mreider/paymentservice:152
         ports:
         - containerPort: 50051
         env:
