@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: randomizer
 spec:
-  schedule: "0 0 * * *"
+  schedule: "30 8-21/* * * *"
   jobTemplate:
     spec:
       template:

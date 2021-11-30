@@ -1,2 +1,2 @@
-sleep $(( ($RANDOM % 1440)*60 + ($RANDOM % 60) ))
-locust --host="http://${FRONTEND_ADDR}" --headless -u "${USERS:-10}" 2>&1
+sleep ${RANDOM:0:2}m
+locust --host="http://${FRONTEND_ADDR}" --headless -u "${USERS}" -r 100 --runt-time 3m 2>&1
