@@ -7,4 +7,5 @@ opencensus-ext-stackdriver==0.7.3
 opencensus-ext-grpc==0.7.1
 python-json-logger==0.1.11
 google-cloud-profiler==1.1.2
+thrift==0.11.0
 requests==2.24.0
