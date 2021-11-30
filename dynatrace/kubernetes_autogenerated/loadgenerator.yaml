@@ -33,7 +33,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: main
-        image: ghcr.io/mreider/loadgenerator:161
+        image: ghcr.io/mreider/loadgenerator:162
         env:
         - name: FRONTEND_ADDR
           value: "34.132.236.107:80"
