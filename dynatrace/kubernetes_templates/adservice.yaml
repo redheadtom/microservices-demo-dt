@@ -43,9 +43,6 @@ spec:
         # - name: JAEGER_SERVICE_ADDR
         #   value: "jaeger-collector:14268"
         resources:
-          requests:
-            cpu: 50m
-            memory: 90Mi
           limits:
             cpu: 300m
             memory: 300Mi

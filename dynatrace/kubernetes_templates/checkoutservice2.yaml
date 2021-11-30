@@ -57,9 +57,6 @@ spec:
           - name: DT_RELEASE_BUILD_VERSION
             value: "2021-10-21"
           resources:
-            requests:
-              cpu: 20m
-              memory: 32Mi
             limits:
               cpu: 30m
               memory: 50Mi

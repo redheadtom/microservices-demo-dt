@@ -37,9 +37,6 @@ spec:
         - name: PORT
           value: "50051"
         resources:
-          requests:
-            cpu: 30m
-            memory: 70Mi
           limits:
             cpu: 50m
             memory: 100Mi
