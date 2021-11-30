@@ -3,14 +3,14 @@ kind: CronJob
 metadata:
   name: randomizer
 spec:
-  schedule: "0 0 * * *"
+  schedule: "30 8-21/* * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
           - name: randomizer
-            image: ghcr.io/mreider/loadgenerator:166
+            image: ghcr.io/mreider/loadgenerator:167
             command:
             - /bin/sh
             - -c
