@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/productcatalogservice:159
+        image: ghcr.io/mreider/productcatalogservice:160
         ports:
         - containerPort: 3550
         env:
@@ -45,9 +45,6 @@ spec:
         # - name: JAEGER_SERVICE_ADDR
         #   value: "jaeger-collector:14268"
         resources:
-          requests:
-            cpu: 20m
-            memory: 32Mi
           limits:
             cpu: 50m
             memory: 50Mi

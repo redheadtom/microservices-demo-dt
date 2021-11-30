@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/emailservice:159
+        image: ghcr.io/mreider/emailservice:160
         ports:
         - containerPort: 8080
         env:
@@ -41,9 +41,6 @@ spec:
         - name: DISABLE_PROFILER
           value: "1"
         resources:
-          requests:
-            cpu: 15m
-            memory: 50Mi
           limits:
             cpu: 30m
             memory: 75Mi

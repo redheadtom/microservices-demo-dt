@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/recommendationservice:159
+        image: ghcr.io/mreider/recommendationservice:160
         ports:
         - containerPort: 8080
         env:
@@ -45,9 +45,6 @@ spec:
         # - name: DISABLE_DEBUGGER
         #   value: "1"
         resources:
-          requests:
-            cpu: 20m
-            memory: 60Mi
           limits:
             cpu: 50m
             memory: 100Mi

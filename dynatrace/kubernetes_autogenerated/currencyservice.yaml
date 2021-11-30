@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/currencyservice:159
+        image: ghcr.io/mreider/currencyservice:160
         ports:
         - name: grpc
           containerPort: 7000
@@ -44,9 +44,6 @@ spec:
         # - name: DISABLE_DEBUGGER
         #   value: "1"
         resources:
-          requests:
-            cpu: 30m
-            memory: 50Mi
           limits:
             cpu: 50m
             memory: 75Mi

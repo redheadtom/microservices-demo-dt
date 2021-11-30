@@ -31,7 +31,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: ghcr.io/mreider/frontend:159
+          image: ghcr.io/mreider/frontend:160
           ports:
           - containerPort: 8080
           env:
@@ -64,9 +64,6 @@ spec:
           # - name: CYMBAL_BRANDING
           #   value: "true"
           resources:
-            requests:
-              cpu: 20m
-              memory: 32Mi
             limits:
               cpu: 50m
               memory: 50Mi
