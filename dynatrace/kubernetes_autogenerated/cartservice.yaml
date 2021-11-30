@@ -36,10 +36,6 @@ spec:
         env:
         - name: REDIS_ADDR
           value: "redis-cart:6379"
-        resources:
-          limits:
-            cpu: 60m
-            memory: 50Mi
 ---
 apiVersion: v1
 kind: Service

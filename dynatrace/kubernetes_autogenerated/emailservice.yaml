@@ -40,10 +40,6 @@ spec:
         #   value: "1"
         - name: DISABLE_PROFILER
           value: "1"
-        resources:
-          limits:
-            cpu: 30m
-            memory: 75Mi
 ---
 apiVersion: v1
 kind: Service

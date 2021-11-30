@@ -39,7 +39,3 @@ spec:
           value: "34.132.236.107:80"
         - name: USERS
           value: "80"
-        resources:
-          limits:
-            cpu: 500m
-            memory: 512Mi
