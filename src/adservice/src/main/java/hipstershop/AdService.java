@@ -134,8 +134,8 @@ public final class AdService {
           allAds = service.getRandomAds();
         }
         //to demo the allocation pattern activate the next two lines:
-        //listOfFancyAds = createFancyAds();
-        //logger.log(Level.WARN,"My List Size: ",listOfFancyAds.size());        
+        listOfFancyAds = createFancyAds();
+        logger.log(Level.WARN,"My List Size: ",listOfFancyAds.size());        
         AdResponse reply = AdResponse.newBuilder().addAllAds(allAds).build();
         responseObserver.onNext(reply);
         responseObserver.onCompleted();
@@ -153,7 +153,7 @@ public final class AdService {
    */
   private static List<String> createFancyAds(){
     List<String> listOfAds = new ArrayList<>(100000);
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 10000; i++) {
         listOfAds.add("My fany ad nr + " + i);
     }
     return listOfAds;

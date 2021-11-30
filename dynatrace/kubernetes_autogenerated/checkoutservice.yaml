@@ -31,12 +31,12 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: ghcr.io/mreider/checkoutservice:162
+          image: ghcr.io/mreider/checkoutservice:165
           ports:
           - containerPort: 5050
           env:
           - name: LEAK_MAX
-            value: "10000"
+            value: "100000"
           - name: PORT
             value: "5050"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
