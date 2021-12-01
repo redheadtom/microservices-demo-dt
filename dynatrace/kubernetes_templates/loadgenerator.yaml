@@ -37,7 +37,7 @@ spec:
         - name: FRONTEND_ADDR
           value: "34.132.236.107:80"
         - name: USERS
-          value: "300"
+          value: "400"
         resources:
           limits:
             cpu: 500m
