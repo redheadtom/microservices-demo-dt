@@ -30,7 +30,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: ghcr.io/mreider/checkoutservice:174
+          image: ghcr.io/mreider/checkoutservice:177
           ports:
           - containerPort: 5050
           env:

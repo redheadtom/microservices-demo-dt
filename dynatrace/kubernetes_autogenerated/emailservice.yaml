@@ -30,7 +30,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ghcr.io/mreider/emailservice:174
+        image: ghcr.io/mreider/emailservice:177
         ports:
         - containerPort: 8080
         env:
