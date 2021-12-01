@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"strconv"
 	"time"
 
 	"cloud.google.com/go/profiler"
@@ -272,12 +271,10 @@ func (cs *checkoutService) PlaceOrder(ctx context.Context, req *pb.PlaceOrderReq
 
 func calcFibunacci() {
 	f := fibonacci()
-	strLeak := os.Getenv("LEAK_MAX")
-	intLeak, err := strconv.Atoi(strLeak)
 	if err == nil {
 		fmt.Printf("error")
 	}
-	for i := 0; i < intLeak; i++ {
+	for i := 0; i < 100000; i++ {
 		fmt.Println(f())
 	}
 }
