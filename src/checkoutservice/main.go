@@ -271,9 +271,6 @@ func (cs *checkoutService) PlaceOrder(ctx context.Context, req *pb.PlaceOrderReq
 
 func calcFibunacci() {
 	f := fibonacci()
-	if err == nil {
-		fmt.Printf("error")
-	}
 	for i := 0; i < 10000; i++ {
 		fmt.Println(f())
 	}
