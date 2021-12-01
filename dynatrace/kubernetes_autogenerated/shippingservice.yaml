@@ -43,6 +43,10 @@ spec:
         #   value: "1"
         # - name: JAEGER_SERVICE_ADDR
         #   value: "jaeger-collector:14268"
+        resources:
+          limits:
+            cpu: 40m
+            memory: 50Mi
 ---
 apiVersion: v1
 kind: Service

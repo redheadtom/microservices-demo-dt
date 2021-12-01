@@ -63,6 +63,10 @@ spec:
           #   value: "jaeger-collector:14268"
           # - name: CYMBAL_BRANDING
           #   value: "true"
+          resources:
+            limits:
+              cpu: 50m
+              memory: 50Mi
 ---
 apiVersion: v1
 kind: Service
