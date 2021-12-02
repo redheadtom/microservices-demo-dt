@@ -17,9 +17,6 @@ kind: Deployment
 metadata:
   name: checkoutservice
 spec:
-  replicas: 6
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       app: checkoutservice
@@ -27,13 +24,13 @@ spec:
     metadata:
       labels:
         app: checkoutservice
-        app.kubernetes.io/version: 1.0
-        app.kubernetes.io/part-of: OnlineBoutique  
+        app.kubernetes.io/version: 1.1.0
+        app.kubernetes.io/part-of: OnlineBoutique
     spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: ghcr.io/mreider/checkoutservice:181
+          image: ghcr.io/mreider/checkoutservice:182
           ports:
           - containerPort: 5050
           env:
