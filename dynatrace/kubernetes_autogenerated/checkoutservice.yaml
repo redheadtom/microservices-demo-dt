@@ -25,6 +25,7 @@ spec:
       app: checkoutservice
   template:
     metadata:
+      labels:
         app: checkoutservice
         app.kubernetes.io/version: 1.0
         app.kubernetes.io/part-of: OnlineBoutique  
@@ -32,7 +33,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: ghcr.io/mreider/checkoutservice:180
+          image: ghcr.io/mreider/checkoutservice:181
           ports:
           - containerPort: 5050
           env:
