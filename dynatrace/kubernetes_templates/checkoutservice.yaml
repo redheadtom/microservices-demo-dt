@@ -25,6 +25,7 @@ spec:
       app: checkoutservice
   template:
     metadata:
+      labels:
         app: checkoutservice
         app.kubernetes.io/version: 1.0
         app.kubernetes.io/part-of: OnlineBoutique  
