@@ -40,7 +40,7 @@ spec:
   serviceAccountName: randomizer
   containers:
     - name: randomizer
-      image: ghcr.io/mreider/beams:latest
+      image: ghcr.io/mreider/randomizer:latest
       command:
             - node
             - "randomizer.js"
