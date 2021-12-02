@@ -15,11 +15,13 @@ jobs:
           - recommendationservice
           - shippingservice
           - checkoutservice
+          - checkoutservice-2
           - paymentservice
           - currencyservice
           - cartservice
           - frontend
           - adservice
+          - randomizer
           - loadgenerator
     steps:
       - name: run number with offset

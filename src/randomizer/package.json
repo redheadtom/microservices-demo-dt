@@ -1,0 +1,6 @@
+{
+    "name": "randomizer",
+    "dependencies": {
+        "@kubernetes/client-node": "^0.16.1"
+    }
+}

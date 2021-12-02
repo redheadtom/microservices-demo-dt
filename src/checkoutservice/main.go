@@ -264,7 +264,7 @@ func (cs *checkoutService) PlaceOrder(ctx context.Context, req *pb.PlaceOrderReq
 		log.Infof("order confirmation email sent to %q", req.Email)
 	}
 	//fibunaci calculation to make it slower - is too long
-	calcFibunacci()
+	//calcFibunacci()
 	resp := &pb.PlaceOrderResponse{Order: orderResult}
 	return resp, nil
 }
