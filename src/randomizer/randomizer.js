@@ -10,7 +10,7 @@ const targetDeploymentName = 'checkoutservice';
 const new_image = "ghcr.io/mreider/checkoutservice-2:latest";
 const old_image = "ghcr.io/mreider/checkoutservice:latest";
 
-async function setImage(namespace, name, version, image) {
+async function changeDeploy(namespace, name, version, image) {
   // find the particular deployment
   const res = await k8sApi.readNamespacedDeployment(name, namespace);
   let deployment = res.body;
@@ -23,6 +23,8 @@ async function setImage(namespace, name, version, image) {
   deployment.spec.template.metadata.labels = labels
   // replace
   await k8sApi.replaceNamespacedDeployment(name, namespace, deployment);
+  console.log("k8s deployment image updated with " + image);
+  console.log("k8s deployment version updated with " + version);
 }
 
 function randomIntFromInterval(min, max) { // min and max included 
@@ -35,11 +37,11 @@ function tick() {
     //get the mins of the current time
     var mins = new Date().getMinutes();
     if (mins == rndMinutes) {
-        scale(targetNamespaceName, targetDeploymentName, "1.1", new_image);
+        changeDeploy(targetNamespaceName, targetDeploymentName, "1.1", new_image);
     }
     if (mins == rndMinutes + 3){
-        scale(targetNamespaceName, targetDeploymentName, "1.0", old_image);  
+        changeDeploy(targetNamespaceName, targetDeploymentName, "1.0", old_image);
     }
   }
-  
+console.log("I am running...");
 setInterval(tick, 1000);
